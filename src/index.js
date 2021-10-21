@@ -1,3 +1,5 @@
+//https://discord.js.org/#/
+
 require("dotenv").config();
 
 const { Client, Intents } = require('discord.js');
@@ -7,13 +9,14 @@ const generateRandomNumber = (min, max) =>  {
     return Math.floor(Math.random() * (max - min) + min);
       };
 
-client.on('raedy', ()=>{
+client.on('ready', ()=>{
     console.log(`${client.user.tag} has logged in`);
 });
 
 
 client.on('message', (message) => {
-    console.log(message.content);
+    console.log('['+ message.author.tag+'] '+message.content);
+
     if(message.content === 'oi ana-chan'){
         message.reply('Oi 👉👈');
     }
@@ -30,7 +33,6 @@ client.on('message', (message) => {
         }
         
     }
-
 });
 
 
